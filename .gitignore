@@ -2,6 +2,6 @@
 **/.terraform/*
 
 #terraform state files
-*.tfsatate
-*.tfsatate.*
-*.tfsatate.backup
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
