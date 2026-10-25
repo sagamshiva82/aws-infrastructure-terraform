@@ -1,0 +1,7 @@
+# terrafomr working directories
+**/.terraform/*
+
+#terraform state files
+*.tfsatate
+*.tfsatate.*
+*.tfsatate.backup
