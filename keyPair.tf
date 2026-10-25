@@ -7,7 +7,7 @@ resource "aws_key_pair" "medicare_Retirement" {
   key_name   = "xfusion-kp"
   public_key = tls_private_key.private_key.public_key_openssh
   tags = {
-    "Name" = "medicareretirement-keypair"
+    "Name" = "${local.project}-kp"
   }
   depends_on = [tls_private_key.private_key]
 }

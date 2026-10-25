@@ -39,3 +39,8 @@ Ensure that the security group is created in the us-east-1 region using Terrafor
 - Use specific IPv4 CIDR block **`192.168.0.0/24`**
 - Create the **`network.tf`** file
 
+## Task 5
+
+- Create a VPC named **`medicare-retirement-vpc`**
+- Deploy in region **`us-east-1`**
+- Use Amazon-provided IPv6 CIDR block

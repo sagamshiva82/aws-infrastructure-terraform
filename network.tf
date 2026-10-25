@@ -1,7 +1,7 @@
 resource "aws_vpc" "medicare_retirement_vpc" {
   cidr_block = "192.168.0.0/24"
   tags = {
-    Name = "medicare-retirement-vpc"
+    Name = "${local.project}-vpc"
   }
 }
 
@@ -10,7 +10,7 @@ resource "aws_security_group" "medicare_retirement_sg" {
   description = "Security group for medicare retirement app servers"
   vpc_id      = aws_vpc.medicare_retirement_vpc.id
   tags = {
-    Name = "medicare-retirement-sg"
+    Name = "${local.project}-sg"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_vpc_security_group_ingress_rule" "medicare_retirement_inbound_rule
   ip_protocol       = "tcp"
   to_port           = 80
   tags = {
-    Name = "medicare_retirement_inbound_rules_tcp"
+    Name = "${local.project}-inbound-rules-tcp"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_vpc_security_group_ingress_rule" "medicare_retirement_inbound_rule
   ip_protocol       = "tcp"
   to_port           = 22
   tags = {
-    Name = "medicare_retirement_inbound_rules_ssh"
+    Name = "${local.project}-inbound-rules-ssh"
   }
 }
 
