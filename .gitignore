@@ -5,3 +5,7 @@
 *.tfstate
 *.tfstate.*
 *.tfstate.backup
+
+#pem/pub files
+*.pem*
+*.pub*
