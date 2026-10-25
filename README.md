@@ -6,11 +6,23 @@ DevOps team is strategizing the migration of a portion of their infrastructure t
 
 For this task, create a key pair using Terraform with the following requirements:
 
-Name of the key pair should be ""xfusion-kp.
+Name of the key pair should be ""medicare-retirement-kp.
 
 Key pair type must be "rsa".
 
-The private key file should be saved under ** /home/bob/xfusion-kp.pem **.
+The private key file should be saved under ** /home/bob/medicare-retirement-kp.pem **.
 The Terraform working directory is ** /home/bob/terraform ** . Create the main.tf file (do not create a different .tf file) to accomplish this task.
 
 ## TASK 2
+Use Terraform to create a security group under the medicare_retirement_solution VPC with the following requirements:
+
+1) The name of the security group must be medicare-retirement-sg.
+
+2) The description must be Security group for medicare-retirement App Servers.
+
+3) Add an inbound rule of type HTTP, with a port range of 80, and source CIDR range 0.0.0.0/0.
+
+4) Add another inbound rule of type SSH, with a port range of 22, and source CIDR range 0.0.0.0/0.
+
+Ensure that the security group is created in the us-east-1 region using Terraform. The Terraform working directory is /home/bob/terraform. Create the main.tf file (do not create a different .tf file) to accomplish this task.
+
