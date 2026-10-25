@@ -4,7 +4,7 @@ resource "tls_private_key" "private_key" {
 }
 
 resource "aws_key_pair" "medicare_Retirement" {
-  key_name   = "xfusion-kp"
+  key_name   = "${local.project}-kp"
   public_key = tls_private_key.private_key.public_key_openssh
   tags = {
     "Name" = "${local.project}-kp"
