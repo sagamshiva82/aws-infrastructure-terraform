@@ -10,8 +10,8 @@ Name of the key pair should be ""medicare-retirement-kp.
 
 Key pair type must be "rsa".
 
-The private key file should be saved under ** /home/bob/medicare-retirement-kp.pem **.
-The Terraform working directory is ** /home/bob/terraform ** . Create the main.tf file (do not create a different .tf file) to accomplish this task.
+The private key file should be saved under ** ./medicare-retirement-kp.pem.
+The Terraform working directory is ** /home/bob/terraform ** . Create the main.tf file (do not create a different keyPair.tf file) to accomplish this task.
 
 ## TASK 2
 Use Terraform to create a security group under the medicare_retirement_solution VPC with the following requirements:
@@ -24,5 +24,18 @@ Use Terraform to create a security group under the medicare_retirement_solution 
 
 4) Add another inbound rule of type SSH, with a port range of 22, and source CIDR range 0.0.0.0/0.
 
-Ensure that the security group is created in the us-east-1 region using Terraform. The Terraform working directory is /home/bob/terraform. Create the main.tf file (do not create a different .tf file) to accomplish this task.
+Ensure that the security group is created in the us-east-1 region using Terraform. Create netwrok.tf file (do not create a different .tf file) to accomplish this task.
+
+## Task 3
+- Create a VPC named **`medicare-retirement-vpc`**
+- Deploy in region **`us-east-1`**
+- Use any IPv4 CIDR block
+- Create the **`network.tf`** file
+
+## Task 4
+
+- Create a VPC named **`medicare-retirement-vpc`**
+- Deploy in region **`us-east-1`**
+- Use specific IPv4 CIDR block **`192.168.0.0/24`**
+- Create the **`network.tf`** file
 
