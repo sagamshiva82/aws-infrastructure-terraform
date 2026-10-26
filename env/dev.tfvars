@@ -1,0 +1,8 @@
+pem_file_path = "./medicare_Retirement.pem"
+file_permission = "0600"
+cidr_block = "192.168.0.0/24"
+cidr_anywhere = "0.0.0.0/0"
+tcp_protocol = "tcp"
+ec2_ami = "ami-0c101f26f147fa7fd"
+instance_type = "t2.micro"
+type_of_ebs_volume = "gp3"

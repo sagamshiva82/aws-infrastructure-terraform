@@ -14,7 +14,7 @@ resource "aws_key_pair" "medicare_Retirement" {
 
 resource "local_file" "local_privete_key" {
   content         = tls_private_key.private_key.private_key_pem
-  filename        = "./medicare_Retirement.pem"
-  file_permission = "0600"
+  filename        = var.pem_file_path
+  file_permission = var.file_permission
   depends_on      = [tls_private_key.private_key, aws_key_pair.medicare_Retirement]
 }
