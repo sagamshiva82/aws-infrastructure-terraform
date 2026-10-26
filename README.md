@@ -44,3 +44,23 @@ Ensure that the security group is created in the us-east-1 region using Terrafor
 - Create a VPC named **`medicare-retirement-vpc`**
 - Deploy in region **`us-east-1`**
 - Use Amazon-provided IPv6 CIDR block
+
+## Task 6
+
+- Allocate an Elastic IP address named **`medicare-retirement-eip`**
+
+👉 **Your task:** Create an Elastic IP address that can be used for static IP assignments to AWS resources during the infrastructure migration.
+
+💡 **Note:** Elastic IP addresses provide static IPv4 addresses that can be associated with EC2 instances, NAT gateways, and other AWS resources.
+
+## Task 7
+- The name of the instance must be **`medicare-retirement-ec2`**
+- Use the Amazon Linux AMI **`ami-0c101f26f147fa7fd`**
+- The instance type must be **`t2.micro`**
+- Create a new RSA key named **`medicare-retirement-kp`**
+- Attach the default (available by default) security group
+
+👉 **Your task:** Deploy a complete EC2 instance with key pair authentication and proper security configuration for the Medicare Retirement infrastructure migration.
+
+💡 **Note:** This EC2 instance will serve as a foundational compute resource for hosting applications during the migration process.
+
