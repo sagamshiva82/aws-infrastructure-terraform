@@ -52,7 +52,7 @@ resource "aws_eip" "medicare_retirement_eip" {
   tags = {
     Name = "${local.project}-eip"
   }
-  depends_on = [ aws_instance.medicare_retirement_ec2 ]
+  depends_on = [aws_instance.medicare_retirement_ec2]
 
 }
 
@@ -105,4 +105,13 @@ resource "aws_route_table_association" "medicare_retirement_rte_ass" {
   subnet_id      = aws_subnet.medicare_retirement_subnet.id
   route_table_id = aws_route_table.medicare_retirement_rte.id
   depends_on     = [aws_subnet.medicare_retirement_subnet, aws_route_table.medicare_retirement_rte]
+}
+
+resource "aws_ami_from_instance" "medicare_retirement_ec2_ami" {
+  name               = "medicare-retirement-ec2-ami"
+  source_instance_id = aws_instance.medicare_retirement_ec2.id
+  tags = {
+    Name = "medicare-retirement-ec2-ami"
+  }
+
 }

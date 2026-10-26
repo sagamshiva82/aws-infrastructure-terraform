@@ -64,3 +64,12 @@ Ensure that the security group is created in the us-east-1 region using Terrafor
 
 💡 **Note:** This EC2 instance will serve as a foundational compute resource for hosting applications during the migration process.
 
+## Task 8
+
+- Create an AMI from an existing EC2 instance named **`medicare-retirement-ec2`**
+- Name of the AMI should be **`medicare-retirement-ec2-ami`**
+- Make sure AMI is in **available** state
+
+👉 **Your task:** Create a custom Amazon Machine Image (AMI) from an existing EC2 instance to enable consistent instance deployments with pre-configured settings.
+
+💡 **Note:** AMIs allow you to create reusable snapshots of configured instances for rapid deployment and scaling.
