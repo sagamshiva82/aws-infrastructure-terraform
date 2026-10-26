@@ -1,6 +1,6 @@
 # Migration Project:
 
-DevOps team is strategizing the migration of a portion of their infrastructure to the AWS cloud. Recognizing the scale of this undertaking, We have opted to approach the migration in incremental steps rather than as a single massive transition. To achieve this, we have segmented large tasks into smaller, more manageable units. This granular approach enables the team to execute the migration in gradual phases, ensuring smoother implementation and minimizing disruption to ongoing operations. By breaking down the migration into smaller tasks, DevOps team can systematically progress through each stage, allowing for better control, risk mitigation, and optimization of resources throughout the migration process.
+medicare-retirement team is strategizing the migration of a portion of their infrastructure to the AWS cloud. Recognizing the scale of this undertaking, We have opted to approach the migration in incremental steps rather than as a single massive transition. To achieve this, we have segmented large tasks into smaller, more manageable units. This granular approach enables the team to execute the migration in gradual phases, ensuring smoother implementation and minimizing disruption to ongoing operations. By breaking down the migration into smaller tasks, medicare-retirement team can systematically progress through each stage, allowing for better control, risk mitigation, and optimization of resources throughout the migration process.
 
 ## TASK 1
 
@@ -73,3 +73,23 @@ Ensure that the security group is created in the us-east-1 region using Terrafor
 👉 **Your task:** Create a custom Amazon Machine Image (AMI) from an existing EC2 instance to enable consistent instance deployments with pre-configured settings.
 
 💡 **Note:** AMIs allow you to create reusable snapshots of configured instances for rapid deployment and scaling.
+
+## Task 9
+- Name of the volume should be **`medicare-retirement-volume`**
+- Volume type must be **`gp3`**
+- Volume size must be **`2 GiB`**
+- Ensure the volume is created in **`us-east-1`**
+
+👉 **Your task:** Create an EBS volume using Terraform to provide persistent block storage for EC2 instances during the infrastructure migration.
+
+💡 **Note:** EBS volumes provide durable, high-performance block storage that can be attached to EC2 instances.
+
+## Task 10
+- Create a snapshot of an existing volume named **`medicare-retirement-vol`** in **us-east-1** region
+- The name of the snapshot must be **`medicare-retirement-vol-ss`**
+- The description must be **`medicare-retirement Snapshot`**
+- Make sure the snapshot status is **completed** before submitting the task
+
+👉 **Your task:** Create an EBS snapshot from an existing volume to implement automated backup strategies for the Nautilus infrastructure.
+
+💡 **Note:** EBS snapshots provide point-in-time backups of EBS volumes and are stored in Amazon S3 for durability.

@@ -71,8 +71,14 @@ resource "aws_instance" "medicare_retirement_ec2" {
   instance_type               = "t2.micro"
   key_name                    = aws_key_pair.medicare_Retirement.key_name
   associate_public_ip_address = true
-  security_groups             = [aws_security_group.medicare_retirement_sg.id]
-  subnet_id                   = aws_subnet.medicare_retirement_subnet.id
+  metadata_options {
+    http_tokens = "required"
+  }
+  root_block_device {
+    encrypted = true
+  }
+  security_groups = [aws_security_group.medicare_retirement_sg.id]
+  subnet_id       = aws_subnet.medicare_retirement_subnet.id
   tags = {
     Name = "${local.project}-ec2"
   }
@@ -108,10 +114,30 @@ resource "aws_route_table_association" "medicare_retirement_rte_ass" {
 }
 
 resource "aws_ami_from_instance" "medicare_retirement_ec2_ami" {
-  name               = "medicare-retirement-ec2-ami"
+  name               = "${local.project}-ami"
   source_instance_id = aws_instance.medicare_retirement_ec2.id
   tags = {
-    Name = "medicare-retirement-ec2-ami"
+    Name = "${local.project}-ami"
+  }
+}
+
+resource "aws_ebs_volume" "medicare_retirement_volume" {
+  availability_zone = aws_instance.medicare_retirement_ec2.availability_zone
+  type              = "gp3"
+  size              = 2
+  encrypted         = true
+
+  tags = {
+    Name = "${local.project}-volume"
+  }
+  depends_on = [aws_instance.medicare_retirement_ec2]
+}
+
+resource "aws_ebs_snapshot" "medicare_retirement_ss" {
+  volume_id   = aws_ebs_volume.medicare_retirement_volume.id
+  description = "medicare-retirement Snapshot"
+  tags = {
+    Name = "${local.project}-ss"
   }
 
 }
